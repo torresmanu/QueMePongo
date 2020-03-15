@@ -1,0 +1,28 @@
+<!doctype html>
+{{#partial "contenidoPagina" }}
+<html lang="en">
+<head>
+</head>
+<body>
+<h1>Creacion de prenda</h1>
+	<ul>
+        {{#each errores }}
+		<li>{{ this }}</li>
+		{{/each }}
+	</ul>
+    <form method="post">
+        <div>
+            {{#block "contenidoPaso"}}
+            {{/block}}
+        </div>
+        <input type="hidden" name="paso" value="{{ paso }}">
+        <button type='submit'>Siguiente</button>
+    </form>
+</body>
+</html>
+
+{{/partial}}
+
+{{> navbar.hbs}}
+
+

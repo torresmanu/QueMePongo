@@ -1,0 +1,16 @@
+{{#partial "contenidoPagina" }}
+
+
+    <h1>Sus guardarropas</h1>
+<b>{{ resultado }}</b>
+<form name="listadoGuardarropas" method="get">
+    <ul>
+        {{#each guardarropas}}
+            <li><a href="{{link}}/{{id}}">Guardarropa de id: {{id}} </a></li>
+        {{/each}}
+    </ul>
+</form>
+
+{{/partial}}
+
+{{> navbar.hbs}}

@@ -1,0 +1,175 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>dds-utn.2019-ju-ma-group-12</groupId>
+    <artifactId>que_me_pongo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <descriptorRefs>
+                        <!-- This tells Maven to include all dependencies -->
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <archive>
+                        <manifest>
+                            <mainClass>src.main.java-que_me_pongo.webApp.WebAppMain</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.heroku.sdk</groupId>
+                <artifactId>heroku-maven-plugin</artifactId>
+                <configuration>
+                    <jdkVersion>1.8</jdkVersion>
+                    <!-- Use your own application name -->
+                    <appName>quemepongo12</appName>
+                    <processTypes>
+                        <!-- Tell Heroku how to launch your application -->
+                        <!-- You might have to remove the ./ in front   -->
+                        <web>java -jar target/que_me_pongo-with-dependencies.jar</web>
+                    </processTypes>
+                </configuration>
+            </plugin>
+        </plugins>
+        <finalName>${artifactId}</finalName>
+    </build>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>20.0</version>
+        </dependency>
+        <dependency>
+            <groupId>net.coobird</groupId>
+            <artifactId>thumbnailator</artifactId>
+            <version>[0.4, 0.5)</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-client</artifactId>
+            <version>1.19.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>1.10.19</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.quartz-scheduler/quartz -->
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.uqbar-project</groupId>
+            <artifactId>arena-jface</artifactId>
+            <version>3.6.3</version>
+            <exclusions>
+        <exclusion>
+            <groupId>org.javassist</groupId>
+                <artifactId>javassist</artifactId>
+       		</exclusion>
+    	</exclusions>    
+        </dependency>
+        <dependency>
+		    <groupId>org.javassist</groupId>
+		    <artifactId>javassist</artifactId>
+		    <version>3.20.0-GA</version>
+		</dependency>
+        <dependency>
+            <groupId>org.uqbar-project</groupId>
+            <artifactId>uqbar-domain</artifactId>
+            <version>3.6.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+            <version>1.6.2</version>
+        </dependency>
+        
+	    <!-- JPA Persistence Dependencies -->
+	    <dependency>
+	      <groupId>org.uqbar-project</groupId>
+		  <artifactId>jpa-java8-extras</artifactId>
+		  <version>1.0-alpha-1</version>
+		</dependency>
+	    
+	    <!-- drivers jdbc -->
+	    <!-- mysql -->
+	    <dependency>
+	      <groupId>mysql</groupId>
+	      <artifactId>mysql-connector-java</artifactId>
+	      <version>8.0.17</version>
+	    </dependency>
+	            
+	    <!-- hsqldb -->
+	    <dependency>
+	      <groupId>org.hsqldb</groupId>
+	      <artifactId>hsqldb</artifactId>
+	      <version>2.4.0</version>
+	      <scope>test</scope>
+	    </dependency>
+	    
+	    <dependency>
+			<groupId>com.sparkjava</groupId>
+			<artifactId>spark-core</artifactId>
+			<version>2.7.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.sparkjava</groupId>
+			<artifactId>spark-template-handlebars</artifactId>
+			<version>2.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.sparkjava</groupId>
+			<artifactId>spark-debug-tools</artifactId>
+			<version>0.5</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.github.jknack</groupId>
+			<artifactId>handlebars-helpers</artifactId>
+			<version>4.0.6</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.jknack</groupId>
+			<artifactId>handlebars-humanize</artifactId>
+			<version>4.0.6</version>
+		</dependency>
+    </dependencies>
+</project>

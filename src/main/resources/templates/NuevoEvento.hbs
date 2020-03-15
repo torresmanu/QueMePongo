@@ -1,0 +1,42 @@
+<!doctype html>
+{{#partial "contenidoPagina" }}
+<html lang="en">
+<head>
+    <title>Nuevo Evento</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <h1>Nuevo Evento</h1>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <form method="post" action="/evento">
+        <input type="date" name="fecha" required>
+        <input type="time" name="hora" required >
+
+        <select class="custom-select" name="repeticion" required >
+            <option selected disabled>Seleccionar tipo de repeticion</option>
+            {{#each repeticiones }}
+            <option value="{{ this }}">{{ this }}</option>
+            {{/each }}
+        </select>
+
+        <select class="custom-select" name="guardarropa" required>
+            <option selected disabled>Seleccionar el guardarropas asignado</option>
+            {{#each guardarropas }}
+            <option value="{{ this.id }}">{{ this.id }}</option>
+            {{/each }}
+        </select>
+
+        <input type="text" name="descripcion" required>
+
+        <button type="submit">Crear</button>
+    </form>
+</body>
+</html>
+
+{{/partial}}
+
+{{> navbar.hbs}}
+

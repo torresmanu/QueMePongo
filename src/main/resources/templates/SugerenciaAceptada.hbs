@@ -1,0 +1,49 @@
+{{#partial "contenidoPagina" }}
+
+<h1>Atuendo aceptado</h1>
+{{#if automatico }}
+  <b>A falta de otras opciones se selecciono este atuendo automaticamente</b>
+{{/if }}
+<h2>Prendas</h2>
+<ul>
+{{#each prendas }}
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                {{tipo}}
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                {{categoria}}
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                {{material}}
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                {{colorPrimario}}
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                {{colorSecundario}}
+            </li>
+        </ul>
+    </li>
+{{/each }}
+</ul>
+
+<h2>Clasificar</h2>
+{{#if clasifico }}
+  Ya opino para esta elección.
+{{else }}
+<form method="POST">
+  {{#each categorias }}
+    {{ this }}:<br>
+    <input type="radio" name="{{ this }}" value="aumentar"> Incrementar abrigo<br>
+    <input type="radio" name="{{ this }}" value="disminuir"> Reducir abrigo<br>
+    <input type="radio" name="{{ this }}" value="nada" checked> No modificar<br>
+  {{/each }}
+  <input type="submit" value="Guardar">
+</form>
+{{/if }}
+
+{{/partial}}
+
+{{> navbar.hbs}}

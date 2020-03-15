@@ -1,0 +1,29 @@
+{{#partial "contenidoPagina" }}
+<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/cerulean/bootstrap.min.css" rel="stylesheet" integrity="sha384-C++cugH8+Uf86JbNOnQoBweHHAe/wVKN/mb0lTybu/NZ9sEYbd+BbbYtNpWYAsNP" crossorigin="anonymous">
+
+
+<div class="container w-50 d-block">
+    <div class="list-group shadow p-3 mb-5 bg-white rounded" align='center'>
+
+        <a class="list-group-item list-group-item-action active">
+            Menu Principal
+        </a>
+        <a class="list-group-item list-group-item">
+            <form method="get" action="{{ruta}}/guardarropas" >
+                <button type='submit' class="btn btn-outline-primary">Mis guardarropas</button>
+            </form>
+        </a>
+        <a class="list-group-item list-group-item">
+            <form method="get" action="{{ruta}}/eventos" >
+                <button type='submit' class="btn btn-outline-primary">Mis eventos</button>
+            </form>
+        </a>
+
+
+    </div>
+</div>
+
+
+{{/partial}}
+
+{{> navbar.hbs}}

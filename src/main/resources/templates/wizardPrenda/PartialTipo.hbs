@@ -1,0 +1,16 @@
+{{#partial "contenidoPaso" }}
+    <div>
+        <p>Bienvenido a la ventana de creacion de prendas</p>
+    </div>
+    Seleccione el tipo de prenda
+    <div>
+        <select name="tipo">
+            <option selected disabled>Tipo</option>
+            {{#each tipos }}
+                <option>{{ this }}</option>
+            {{/each }}
+        </select>
+    </div>
+{{/partial}}
+
+{{> wizardPrenda/WizardPrendas.hbs}}

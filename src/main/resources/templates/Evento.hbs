@@ -1,0 +1,18 @@
+{{#partial "contenidoPagina" }}
+
+
+    <h1>{{ titulo }}</h1>
+{{#if sugirio}}
+<a href="{{linkSugerencias}}">Ver sugerencias</a>
+{{else }}
+  {{#if sinSugerencias }}
+  No se pudieron generar sugerencias para este evento
+  {{else }}
+  Aun no se han generado las sugerencias
+  {{/if }}
+{{/if }}
+
+
+{{/partial}}
+
+{{> navbar.hbs}}

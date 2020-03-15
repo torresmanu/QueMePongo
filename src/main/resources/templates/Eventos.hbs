@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{{#partial "contenidoPagina" }}
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+
+    <link href='javascript/fullcalendar/core/main.css' rel='stylesheet' />
+    <link href='javascript/fullcalendar/daygrid/main.css' rel='stylesheet' />
+  </head>
+  <body>
+
+  <div>
+    <form>
+      <a href="/evento/nuevo">Nuevo Evento</a>
+    </form>
+  </div>
+
+    <div id='calendar'></div>
+
+  <script src='javascript/fullcalendar/core/main.js'></script>
+  <script src='javascript/fullcalendar/daygrid/main.js'></script>
+
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var calendarEl = document.getElementById('calendar');
+
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        plugins: [ 'dayGrid' ],
+        defaultView: 'dayGridMonth',
+        header: {
+          left: 'prev,next today',
+          center: 'title',
+          right: ''
+        },
+        events: '/api/eventos'
+      });
+
+      calendar.render();
+    });
+
+  </script>
+  </body>
+</html>
+{{/partial}}
+
+{{> navbar.hbs}}

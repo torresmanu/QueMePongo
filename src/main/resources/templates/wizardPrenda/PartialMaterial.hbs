@@ -1,0 +1,13 @@
+{{#partial "contenidoPaso" }}
+    Ingrese el material
+    <div>
+        <select name="material">
+            <option selected disabled>Material</option>
+            {{#each validos }}
+                <option>{{ this }}</option>
+            {{/each }}
+        </select>
+    </div>
+{{/partial}}
+
+{{> wizardPrenda/WizardPrendas.hbs}}

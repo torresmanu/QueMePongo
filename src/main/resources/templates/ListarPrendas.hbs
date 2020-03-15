@@ -1,0 +1,49 @@
+{{#partial "contenidoPagina" }}
+
+<h1>Sus prendas</h1>
+<form method="get" action="{{ruta}}/prenda" >
+    <button type='submit'>Agregar prenda</button>
+</form>
+<b>{{ resultado }}</b>
+<form name="listadoPrendas" method="get">
+    <ul class="list-group">
+        {{#each prendas}}
+<<<<<<< HEAD
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        {{tipo}}
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        {{categoria}}
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        {{material}}
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        {{colorPrimario}}
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        {{colorSecundario}}
+                    </li>
+=======
+            <li>
+                <ul>
+                    <li>{{tipo}}</li>
+                    <li>{{categoria}}</li>
+                    <li>{{material}}</li>
+                    <li>{{colorPrimario}}</li>
+                    {{#if colorSecundario}}
+                    <li>{{colorSecundario}}</li>
+                    {{/if}}
+					<img src="{{linkImagen}}">
+>>>>>>> 4ef955691739f32ebf811fc5f929b50a95bfa400
+                </ul>
+            </li>
+        {{/each}}
+    </ul>
+</form>
+
+{{/partial}}
+
+{{> navbar.hbs}}

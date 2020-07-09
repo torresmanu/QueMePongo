@@ -1,4 +1,4 @@
-qmpongo.herokuapp.com
+http://qmpongo.herokuapp.com/login?redirect_to=/
 
 "Que me pongo" (What to wear) is the annual practical work of the subject Systems Design, which integrates knowledge of:
 
